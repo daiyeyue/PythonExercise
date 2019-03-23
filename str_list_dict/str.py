@@ -138,3 +138,56 @@ s2 = 'I 狗234'
 print(s.isalnum())
 print(s1.isalnum())
 print(s2.isalnum())
+
+#split() 用指定字符串切割字符   返回由字符串组成的列表
+s = '岳*治*中'
+list1 = s.split('*')
+print(list1)
+
+#splitlines() 以换行切割字符串
+s =  '''岳\n治\n中
+chen'''
+print(s.splitlines())
+
+# join() 将列表按照指定字符串链接 返回的是字符串
+list1 = ['岳', '治', '中', 'chen']
+s = '*'.join(list1)
+print(s)
+
+#ljust() 指定字符串的长度，内容靠左边，不足的位置用指定字符串填充，默认空格，返回字符串
+s = 'abc'
+print(len(s))
+print(s.ljust(5)+'a')
+
+#center() 指定字符串长度，内容居中，不足的位置用指定字符填充，默认空格，返回字符串
+print(s.center(5,'#'))
+
+#rjust()  指定字符串长度，内容靠右边，不足的位置用指定字符串填充
+print(s.rjust(5,'#'))
+
+# strip() 去掉左右两边指定字符串，默认是去掉空格
+# lstrip() 去掉左侧指定字符，默认是空格
+# rstrip() 去掉右侧指定字符，默认空格
+
+s = '   abc '
+print('---' + s.strip() + '--')
+print('---' + s + '--')
+
+s = 'aaabcc'
+print(s.lstrip('a'))
+print(s.lstrip('b'))
+
+print(s.rstrip('b'))
+print(s.rstrip('c'))
+
+# maketrans() 生成用于字符串替换的映射表
+# translate() 进行字符串替换
+s = '今天晚上我吃的是小炒肉，可好吃了'
+table = s.maketrans('小炒肉','大白菜')
+print(table)
+print(s.translate(table))
+
+s = '今天晚上我吃的是小炒肉，可好吃了'
+table = s.maketrans('小炒肉','大白菜和大粉条')
+print(table)
+print(s.translate(table))
